@@ -101,14 +101,20 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class="logo" onclick="location.href='actualfrontend.html'">
         <p style="font-size: 25px; color:aliceblue;">KU Parking System</p>
       <nav class="nav">
-        <a href="https://lawrencetransit.org" class="nav-item">Take a bus</a>
+        <a href="https://lawrencetransit.org" target = "_blank" class="nav-item">Take a bus</a>
         <a href="about.html" class="nav-item">About</a>
-        <a href="http://www2.ku.edu/contact.shtml" class="nav-item">Contact</a>
+        <a href="http://www2.ku.edu/contact.shtml" target = "_blank" class="nav-item">Contact</a>
       </nav>
     </div>
     <div class="footer"></div>
     <div class="search-box">
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..." id="search" name="searchs" list="search-list">
+      <datalist id="search-list">
+        <option value="Templin Hall"></option>
+        <option value="Ellsworth Hall"></option>
+        <option value="Lied Center"></option>
+      </datalist>
+
       <button type="submit" onclick="location.href='#';">
       <img src="search-img.png" alt="Search" type="search-img">
       </button>
