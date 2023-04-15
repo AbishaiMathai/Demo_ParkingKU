@@ -1,0 +1,99 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set basic font styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Style the header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e73be;
+    color: #fff;
+  }
+  
+  /* Style the logo */
+  .logo img {
+    height: 50px;
+  }
+  
+  /* Style the search bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    background-color: #fff;
+    color: #1e73be;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the location toggle */
+  .location-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .location-toggle label {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .location-toggle span {
+    font-size: 16px;
+  }
+  
+  /* Style the main content */
+  main {
+    padding: 20px;
+  }
+  
+  main h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .parking-spots {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .parking-spot {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  .parking-spot h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .parking-spot p {
+    font-size: 16px;
+  }
+  
