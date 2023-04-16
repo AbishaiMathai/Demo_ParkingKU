@@ -108,7 +108,7 @@
       </nav>
     </div>
     <div class="footer"></div>
-    <form name="park-data" action="." method="post">
+    <form name="park-data" action="{{url_for(search)}}" method="get">
     <div class="search-box">
       <input type="text" placeholder="Search..." id="search" list="search-list">
       <datalist id="search-list">
@@ -116,7 +116,7 @@
         <option value="Ellsworth Hall"></option>
         <option value="Lied Center"></option>
       </datalist>
-      <button type="submit" onclick="location.href='#';">
+      <button type="submit"><i class="fa fa-search"></i>
       <img src="search-img.png" alt="Search" type="search-img">
       </button>
     </form>
