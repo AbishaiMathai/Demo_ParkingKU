@@ -4,8 +4,10 @@ from sqlalchemy import create_engine
 from sqlalchemy import text
 import pandas as pd
 import mysql.connector
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
-database_string="mysql+pymysql://mghz3at0bvipmm4jwaja:pscale_pw_xkotPwIFRqNrkelG7iO8HgVVGE76i2z1foyibfZofWK@aws.connect.psdb.cloud/kuparking?charset=utf8mb4"
+database_string=os.getenv("database_string")
 engine=create_engine(database_string,connect_args={
     "ssl":{
         "ssl_ca":"/etc/ssl/cert.pem"

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Abishai first web dev</title>
+    <style>
+      h1{
+        font-size: 80px;
+        font-family: Calibri;
+        font-weight: normal;
+        color: rgb(180, 180, 180);
+        text-align: center 
+      }
+      #banner {
+        width: 100%;
+        height: 360px;
+      #container {
+        max-width: 720px;
+        margin: 0 auto 0 auto
+      }
+      }
+      h2{
+        font-size: 40px;
+        font-family: Calibri;
+        font-weight: normal;
+        color: rgb(100, 100, 100);
+        text-align: center;
+      }
+      p {
+        font-family: Roboto;
+        color: rgb(45,200,90);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1> KU Parking</h1>
+      <img src="https://wallpapercave.com/dwp2x/wp2022287.jpg">
+      <img id="banner" src="https://parking-ku.abishaimathai.repl.co/static/KU%20campus.JPG" width="300",height="300">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam cursus venenatis. In a pharetra felis. Curabitur suscipit velit sed faucibus imperdiet. Mauris vel tempus dui. Suspendisse id efficitur urna. Fusce neque lorem, eleifend a sodales in, viverra nec quam. Cras fermentum neque quis placerat semper. Fusce finibus arcu id pharetra sagittis. Sed id erat arcu.</p>
+      <h2>open spots</h2>
+      <div> 
+        {% for job in jobs%}
+        <div><h4 style="color: rgb(200,100,10)">{{job['title']}}</h4></div>
+        <div><h4><b>Location:</b> {{job['location']}}</h4></div>
+      {% endfor %}
+      </div>
+      <button> navigate to x spot</button>
+    </div>
+  </body>
+</html>
