@@ -41,8 +41,27 @@ def search():
                     listy.append(i)
             number = int(''.join(listy))
         return render_template('templin.html', query=number)
-    else:
-        return render_template('king.html',query=query)
+    elif query=='Ellsworth Hall':
+        with engine.connect() as conn:
+            result = conn.execute(text("select count(ID)  from Ellsworth_1 where Availability=1"))
+            answer = str(result.all())
+            listy = []
+            for i in answer:
+                if i.isnumeric():
+                    listy.append(i)
+            number = int(''.join(listy))
+            return render_template('ellsworth.html',query=number)
+    elif query[0].lower()=='lied':
+      with engine.connect() as conn:
+        result = conn.execute(text("select count(ID)  from  where Lied_Center Availability=1"))
+        answer = str(result.all())
+        listy = []
+        for i in answer:
+          if i.isnumeric():
+             listy.append(i)
+        number = int(''.join(listy))
+        return render_template('ellsworth.html', query=number)
+
 
 
 if __name__ == '__main__':
