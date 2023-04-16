@@ -24,7 +24,7 @@ with engine.connect() as conn:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('actualfrontend.html')
 
 @app.route('/search')
 def search():
@@ -50,7 +50,7 @@ def search():
                 if i.isnumeric():
                     listy.append(i)
             number = int(''.join(listy))
-        return render_template('templin.html', query=number)
+        return render_template('ellsworth.html', query=number)
     elif query == "Lied Center":
         with engine.connect() as conn:
             result = conn.execute(text("select count(ID)  from  Lied_Center where Availability=1"))
@@ -60,7 +60,7 @@ def search():
                 if i.isnumeric():
                     listy.append(i)
             number = int(''.join(listy))
-        return render_template('lied.html', query=number)
+        return render_template('Lied.html', query=number)
 
 
 if __name__ == '__main__':
