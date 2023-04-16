@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <title>KU Parking System</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: blue;
+        height: 100px;
+        padding: 0 20px;
+      }
+      .logo {
+        height: 75px;
+        width: auto;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      .nav-item {
+        margin-left: 20px;
+        color: #fff;
+        font-size: 16px;
+      }
+      .footer {
+        background-color: red;
+        height: 10px;
+    }
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .parking-map {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .parking-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .parking-spot {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    background-color: #c5c5c5;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+  }
+  .parking-spot.available::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgSFRUYGBgYGBgYGBgaGhoYGBgYGBgZGRkYGBgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QGhISGjEhISE0NDQxNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDE0NDQxNDQ0NDQxNDQ0NDU1NP/AABEIAJ8BPAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAABAAIDBAUGB//EAE0QAAIBAgEIBgUIBQsDBQEAAAECAAMRBAUSITFRUpHRBhMiQWGSFBVxgaEyQlNiorHB0kOCk7LhByMkRGNyg6PC4vAzVHMXNLPD8Rb/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQMCBP/EACMRAQEAAgEDBQEBAQAAAAAAAAABAhEhAxIxBBNBUWEy8CL/2gAMAwEAAhEDEQA/AOfwS2X2mTgRlFLKJIJnUK0VpHWqlQDmltNrDX7ZLJoJRCwgWPiBkREN4iYACxZvjCISYACxWhvDAYohKw3ivAGb4xWO0cI68RMBq38Puiu2we8x+dGu4AJMslt1E2AvsHGOQbZhZRyodIBt7DY+8yhhsouh7LaNh0jhPXPR5XHe+fpn7s34dHj00A+6Ch8kSOjihVS5ADDSRs2EfGSYf5InmyxuGVxvlpLLNxAlO9Q8fhLhpyHDjtufZLM5qmil/wAsIupHeFPuEescDIbRHDLur5RI/RV3E8olkiKQVOovpKJfZm3+MkSjbUq+W0kZRouNWqSKZREaY3FP/PZAaQ3F4DlJ7xQIBRFvkL8OUBVRrQe0AGSs0idxIExS17DVs0zNcrrt8JbeoLGVSZYGjN8JjY0Wf3zamNlIdozqDMxI7QgEOJPyfbLNNQBadD0H/wDoKHeo99McofXeGPzU/ZjlKYHhAVGwTgXvXGG3U8sIyphj3JwbnKAQbBBmjYOAjYvnKOFv8zi3OOGNwp3PMw/GZoQbBwEJprujgI2NP0jC/V/aNzh6zDeHnMyepTdXgI00U3F4CBshsMe8eeLNw+0+ccpiNRTcXgJH1CD5o06dP4eEDf6vD7zedfyxdRQ3n8yflmAKabi8IOqTdHCB0HotHffivKIYWlvv9mYK0U3RHrQTdEuxt+iU95+Cw+h099+C85jDDps++HqF2fE85BrNhE328o/NOY6QZQRH6pGLEa9FtNr2OkzQ6hdnxPOc+lNKeLYuhcdpkXOsCx7S5xPdoI9o9426N1bfmRzZvg7DZFxNUZy0iRtP/NHCRY7JOIo6alJlG8NK/DSPfLjVa+IYZ7G17BQGRE8Amq3jxMs08bWwxKjOdBodKgLIwGuwHydF+0Dxms9XlLyezwo5LrBXS5srEKT3ANouR4G3CdWmT1AtnjymcViHQu+YjIhsyqxBKk6wCNYvq1eybeCXPRXz3vY3sx1i4Ovxl9TrLGZz5cYf824txMnoCSKg0/VPOSDAr9IPKZjKuvtNr3m2Dxht9ZvO3OeRq2RgV+kHlMPoS/SDynnMgL9ZvO3OOzPrP5m5wNX0JfpB5TB6Ev0g8p5zMKfWbzNzjeqO83mbnJwNF8IPpB5TzjGwv9ovlbnKDUvrN5m5xq0dGkt5m5xuDQ9H/tF8rQ9R/aL5W5zPNEbX87c4DQG1vO3OOBfOFB/SL5WgOTVP6UeUzIdCPnN5m5yIu2+/mMcDb9UJ9L9kxHIyfS/ZMxRUfffzGLrm338xgbPqZPpfsmcplZLO67GIvtsbXmj1777eYzPygCSCTe40nxEsoxqg+T4G0lzompk6AL6bx3VEaLHhOh2+f9UjhzgZ/AwiOmYjz/A8IM/wMlitKIs8SQOIbRWkDS4kZqrtk1o6BSesu0cZC1S5sNPsmqBHCUYgrLtHERy1l3hxmwFGyIqNggZiVBtHGT02B7xxlg012DhF1K7o4CAwe0QsRtjWpJujgJVqIu6OEC3cTnMv6KqsNBzbqfrIxP4zTzBsmRl0ABCCM5Tq8D/ECben/ufrm+HQUaoemjrYXsddteuWFsVYGxudGm+gjbOayRjFsaT6RfOX2HWPcfvmljceiIxS+rX492kzHqYXHO4vTjlLjtziVM52Pum5kp2FMgAnSdVtGo6bnxnNYZraZ0WAo2QX1ntH3/wtPb1OOhjHl852ryNrue/8BJQZXFMR9OmuwTxO1lZIIxaS7JKKC7JAAYM6MqU1kDKBGhbuNo4wqJnG+2Ozjqv90C+YCNco6dsVztMA1VlVxLGbfWTAMMh134wK6wWl1cGnjxj/AEBNh4mBnGVsYvZvfUeAtabfq1D3HjGHJ9MMuv5S6zfvHwjelNybkwJTzmHbcab/ADV7l5y51I3RL74cyrmzHK7rvSMQzTHo20eeLMw+37Y5TdmzBCZpilh9p868ovR6G83mXlGhmXiE0/RKO83FeUXodLfb4GNDMJhBmmcn0t9vhAMFTOgOeA5xoUFMdLwyem+fKOcPq9N8+X/dAoGAmaByeu+fJ/um5kfDKtO2hu0Te1tnKdY47SuSJiJnTZUy1hMO4p1mVXK54HVs3ZJIBuqm2lTwkC5eye36Sj70t+8svZ+m3LVXmXiceBq0+3RPUFwGHdQwpU2VgGB6tbEEXB1bJC+QcKdeGon/AA05TTDHGf1Npbfh5N6xYm17Dw5zOxTks3fcixOwCxHHTPZj0awf/bUvcgH3Rp6LYL/tk+0PuM9M6uGPiacav28WoVM1w1tRvNTKuKpsqle1o0DYdRLCekVOjOTesWiaKB2VnVA9QEqpAJ0N4++x2Gzz0JwGn+YIv/aVfzzPK4ZZTK7dzKyaeQU1vp7hLlPEuvyW0bO7hO1o5NyW2LbBdS6upID9Y+YzKucyjt3BGnymbR6C4Pdcf4jfjN51sLNWOLjdvPqOVe5l945TRw2IVtKm/h3j3TXo5ByZUxD4RGrGogbOswzAUtnLnFdJF/gZrUug2HUhlesD/eQ39vYmGePSym8eK6ndPLApGTXm1jujgRM6mzMbm4YrawVmNrAadEyTg6m78V5zy2WO1SoZXYy82Aq7h4jnI2yZV3D8JyKd4pZOTau4YPV1XcbgYFa8N5Y9XVdxuBg9Aq7j+UwIbQBpP6FV3G8p5QHCVNxvKeUgSvLCNIVwNX6N+Bk9PDv3o3lJ/CA5nsJSd7mWa9J9xvKeUqmg+63AwNbE4xTY95ANu4XH3yv1kiRDmaVIKta5HcwuPiDxjpjlNVpERwibi8BF6Gm4vCWDa+scYRabs1X0RNxeEXoibglgrFmwK5wibo+MXoqbPiecsMIbQK3oqbDxPOOOFTYfM3OT2itAhGFX63mbnD6Ou1vO3OTBI4CBb6P4VDWUMCwzW0MSwvbYZ12DRVXNVQoudAFhrnKZAcDEIL6WzwPGyMfuBnW4bV+s33zXDwlOeijHtKre0A/fPPP5PcKj1KwdEfsKQGUNbtd1x7J6MJwH8mul652JT+0X/LLfKR3wFtA0DZ+EMQilQoGYDSTYDSSdQA1kwzlem+VAqpg1dEaubO7EBadEmzM19tiPEAjWRFWOWxGUX9ITKx/6RxBpJrv1aLbV9ZDU0byt4T1MTjsr18C+CbCUsRS7CXpguoJdO0NJ1liCD/fM2eiON6zCUXJuVXMbbdDm6fEgKffJFrzbEUqmficfT/Q4rO89WoVa+wFUBHeH8J6D0i6QilhkqUe1UrhRh1GkkuAQ1u/NDD3lR3zJ/k8oCrha/WKCtaoysNqmmpPxdpF0a6LV0xCviTenhs9cPdlOddyVcKCc0dotpsb5uyIip0UyYaGU2pFs5kw+c7Xvd3FNm09+l7eNrz0WcX0b7eVMbU3RmcHVP/rnaxCquPBzHtrzKlvb1b2nAHFVt9PL/Geh4kdkj6j/ALhH4zzltU5z+FxB8oVh3pwPOL1nW+pwMgqSMzJVr1rW2J8YvW9bdTieUqQXgXRletupxPKL1xV3E4mUhCJdi764q7i+Y8ovXVQfMXzHlKMBk2NVcv1NweaOOWqh/R/bmOTLFFtEbFs5bfc+3B66fc+1KLxggbWCx5q59Nlt2CwN76VZecit4CQZHP8AOgbVcfZJ/AS1Ms/LTHwOb4RWhJhE2ZkVgzY6GAy0ObHGIQG5sNoYoCsIs0RAQwLGQ8KgxKPbtXfTcnWjg6/bOww/yf1m/eM5PJH/AFk/vf6TOsoDR72/eM1w8JTa+LRLqzorWvmllDW06bE37jOI/kyAviD9WgP/AJZ0uVOjOGxD9ZVRi+aFuHddA1aFIHfOcylkTJVBwr1KiOLHMUmoR3jO7DFb7CRLfJHeRTJwXSPDVmCJVXOY2CsGQknuUOBnHwE1pUR4muqI1RzZUUsx2AC5nJ9Hskrig+NxSBjWa9NGJslNeytrW16vYoPeZ02U8npXpmlUzijEEhWKk5puNI06wD7oyjjKK1Bg1YB1phwgBsEHZAvquNGjXbTApN0VwR/q6+5nH3NMfo2ww1fFYM3CrnVqV7/IzRcXOvslPI07OYWWsiI9QYsu6GnTdWCZt3Qo4Iue8B3t7Rsk0u1T+Tmnm4Gme9mqE+5yn3IJ1AE4zJHSfAYekmHV6uamdYuhLHPdnN80bWOoTosnZcw1fRSrIzWvm3zX8jWb4RErlv5PTn18dV7nqKR7Ges34idxMro9kBMIrojO2eVJL5t+yCABmgbTNaWeCo3Hd9R/9I/GeYK5sP4cp6kBdh7COJXlPKqLhgCNX/AZx1JxKuJOt+8/DlAafieI5SS0UyVCaXieI5Qil7fhykxERgRdX7fhyg6u/fJDEqXtAemBv874Q+qzv/D+MuUUlgQMd8msPnjh/GBaRX532f8AdNWrqmfWkFd0J7/h/GQmi+/9n+MtXjKqBhmnSDrH/wCSqlyUjCshLXF7agNYI2+M0HpEEi/fM1KhUhhrBBHtGmdFWw+cc9dTAHXtEzydRCMBU3DwhGAqbjcDK5xL7V4fxi9IfavD+M1cLJwFTcbgYPQ6m4/lblIRiX2rwPODr3vfs8DLwJ/Q6m4/lblB6LU3H8rcowYp/q/GL0t/q8THAd6K+4/lblF6M+4/lblGelPsXieUIxlTYvmPKOAeofdbymHqm3W4GNGNq7Af1zyh9Y1d0ec8o4FnJiMKqdk/LHcds62lq97fvGcfTxz3R3NgrqSLliwU3I7rCx4+ydLk3KVOpdUJuLkgjTYnXs751hlPBcbra5VfNUta+aC1u82F7DhOO6GZIpV6TYuui1Hqu57YzlHa7VlOi5bO07ALTtCL6DqOgzj+hNbqGq5PqGzo5ZL6M9WGnN26AG9jnYZpfKRsp0awq1EqrSVWQ5wC3CXGolPk6DpGjWBNcQwQlIkDSTYDSTsG2eV+l1BW9a2OYMUFbQb5jLax9iZq+0idp02yj1WGZR8qqerG3NIJc+UEe1hJFyH/AEA4OwDGkR4dae3f3VLcJKsboI1g3B1HaDqMzukL5uGrka+qqAe9CPxmf0Gx5qYVVb5VI9Ub67KAUv8AqkD9WWulb2wlc7UC+ZlX8Zd8J8s3oXgaTYVXamjMzPdiiliA7AXJF+6TZX6HYasCyKKL61emLLnawWQaDp2WPjLfRKnm4SiNqs3mdm/GbELtx/RjK1ZK7ZOxRLVFF6Tk3LgDOsWOlgVBYE6dDA6ROvnLdNkWk2Gxw0PSrIjnvNJs4svwYD++22dPXYqrEC5AJtttJEohrG+y33zzA0Aost9F9YIvp7tHjNHF4tqrlnJ0nUD2R4AEm0sHFCmoZgSBoGhX1jYB4TLLPfDSYam6w7GKxmz69Td/yxygOXKe5/ljlJpyyNMVjNf11T3B+zHKL1xS3B+yX8sDGMdRGmbHrmlur+zHKL1pSPzB+z/hGhBTkhMk9ZUtwfszyh9Z09wfszygVajaDKVSX6mUKd75g/ZkD7pH6wpbq+VpNChBaaAx9HdXg0TY6hurwfnAzZsCrVsoTUqKvfrCi8qPjaJIFl02Hz+clSpWYXp3VPmgAkW9s4rrETFaR+it9I/BPyweiv8ASv5U/LO3KwBABIPRn+lbypD6O/0p8i84FgCKV+pf6X7A/NEaVTuqD9n/AL5RYtEokAp1fpF/Z/74cypvp5D+eBOYDIUzzpDqe75B/PHZrby+U/mgTljm202DXsLW0jWb+yXsgYd2qiol81T2idAIOtRbWfCZ+GRi6BihGetxY6e0LjXO8oKAqgAAAAAAWA906xx3durnrHR8x8v9H6WJALXR1+RUX5Q03sR84X0+HcRpmxFNWbg8XVxuTylR65xGHzgrXFyAdJ+VdlNgc3tEXFj3Tuwbi41HVOY6f1v6MKCjOeu6Ii95zSGvxCj9YTpBZE7R7KLpbYqjSeAkhXDdLKlWtjUpUEz2w6q+b3ZzMrsWuQLW6sa++WxTyw+t0peH8394DmXOhtIuK2McHOxFRioPcisQBxuP1BOmlkXbieiYfD4yvhazAvUVaoK/JZ+0zW0DSQzd36MzW6cvbBVPFqQ/zUlPpinVVsLjRozKgSofqE5wv4AdYP15b6ef+zf+/T/fUwi/0cH9Fw//AIkPvKgn43mlM/o8P6Lh/wDw0/3BLGOx1OiufVcIPHWfBRrY+Agc906fOTD4Ya6tdPHQptfzOnxnVMZyGRS+MxPpjoVpUgUoA97aQWPcSLknuvmjTmzrogyMpZCSq5e5VrC50EE9rSQfYJxWPchmpm3YdlJAsCVJW9uM9J7z7F+9p5zleg/X1bISOscjSne5Pe0zzxk5dTK+FG8V4eoqbjcU/NEcO+43FPzTMNMUd6O+4eKfmh6h9w8U/NAYolvDLIBRfcbivOWaOcNaN9n80CyBCDGu9tGax8QLiRtV8GHugGoTKTywX8DwleqrHUDwkEZMbeLMfcbgZGUfcbymFSo2kX1XF/ZfTNfFYghs0aAAABsAGqYDCp9G3BuU18fVu+r5q/EXnNWLYikgwr7n2k5xHDPufFec1co4rSX0Z9z4rzjTh33PinOAy0Uk9GfcPFecIwrn5h+HOBEDDJRgam4Y/wBCqbjcI0KwUDQAB7IpYOBqbj8IvQqm43CNCKloYHYQfjO6QaB7JxPolTcfymdH62b6CpwPKd43SVJljKL0QpSg9YsSLJfs2A+VZTr9ndMk5Vx76KeECfWqNqHsOafgZo+uG+gqcDyh9c7aNXyzrc+0VclZBdanpOJqdbWt2e5KY06EGi+s6bD2X0m70gwVStQejSdUZ7As17Zl7sNAOuwHsJlXHdJadJDUenVCi1+yO8gd7DbM7/1Bwlrla3kU/c86xm5wOmwWFWnTSkvyURUG0hRa58Trk85MfyhYE99Ue2mfwMkXp9gd9x/hv+AjQ1ukOA67DVaQF2KXQfXQh0HvKge+ZmMyXXq5PTDkAVQtMWZhbsONJYX0lFv7Yh07wH0zD/Dqfljx03wB/T8adUf6I7aMyhkXKeYtM4lERVCgKbMFUAAAogOobZcyf0LpKesxDvXfvLEhffpLN7zbwltemGBP9YT3hx96yVelWBP9Zp+a33iTtptrogAAAAAFgALAAagANQjpkjpJgzqxNHzrzkyZbwzGy4miSdQFRCT7ry6v0i53n2L/AKpx+VB/PP8A3z8dMtZaxxNT+bqHNzV+SxtfTsMyyxOkm/jrMyzy3w6kKAiKAzNRhtAIZAYheC8IMoRlTGLLbGVMZIKZiMBMDGFWMK2mCtrMZhW7UFd9MCGvLrYfPCtY/IUcFEz6zTVwddhTW2w/vH8LSVYAqV9ecnAxdbW3k4GSQTtyYHrbU4GEPW3k4GPiEojL1tqfGOWrWHenxjrxSALiq31PtcpIMXW2JxPKRiEGXkPOMrbE4tyi9MrbE4tyjLxRsSem1t2n5m5QJjKg05q+Y8owmAGNif1jV3V855QjKVXcXznlK94RG6M3pRlF3ppTYZoZ849q9winRb2ss5BwBqmzl7EZ1UgakGb7zpY/cPdMOo2mdTcCzjD1kiJgvNJ1c58p2xOtSE1PCQBo7OnXv5/Z2xJn+Ah0bJFnRytHvZf6JqJEXTeaWSsUqVUdxcK4JH3HxsbG3hMotA7Eiw1ye7lrWztj1D1whF8xv2Q5RHKifR/5Q5SmugWMN559uj6uOQ/oz+z/AISi9VNw+Q8pbvATGxQLput5Wi6xNjcGmheC8dwodanj9qLr02ke9pogxAy7Gd6Sm+fM0BxCH558xmgxjHAzTok2KPWU974xdZT3hxkDkbJWeoNkb/Boh0GpxxERKH5w4iZCVBnDR3yPG1ADql3+Gm3mIe8HhJUcAWD2Gzs8pm5OpqyAlQdJ1gbZXyi4VgAq2zR3eJgf/9k=');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+  }
+
+  .parking-spot.unavailable {
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  } 
+  .parking-spot:hover::before {
+    opacity: 1;
+  }
+
+  .parking-label {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .parking-label.available {
+    color: #27ae60;
+  }
+
+  .parking-label.unavailable {
+    color: #c0392b;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class="logo" onclick="location.href='actualfrontend.html'">
+      <p style="font-size: 25px; color:white;">KU Parking System</p>
+    <nav class="nav">
+      <a href="https://lawrencetransit.org" class="nav-item">Take a bus</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="http://www2.ku.edu/contact.shtml" class="nav-item">Contact</a>
+    </div>
+    <div class="footer"></div>
+    </nav>
+  </div>
+  <div class="parking-map">
+    <div class="parking-row">
+      <div class="parking-spot unavailable">
+        <div class="parking-label">T1</div>
+      </div>
+      <div class="parking-spot unavailable">
+        <div class="parking-label">T2</div>
+      </div>
+      <div class="parking-spot available">
+        <div class="parking-label available">T3</div>
+      </div>
+      <div class="parking-spot available">
+        <div class="parking-label available">T4</div>
+      </div>
+      <div class="parking-spot available">
+        <div class="parking-label available">T5</div>
+      </div></div>
+      <div class="parking-row">
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T6</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T7</div>
+        </div>
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T8</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T9</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T10</div>
+        </div>
+      </div>
+      <div class="parking-row">
+        <div class="parking-spot available">
+          <div class="parking-label available">T11</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T12</div>
+        </div>
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T13</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T14</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T15</div>
+        </div>
+      </div>
+      <div class="parking-row">
+        <div class="parking-spot available">
+          <div class="parking-label available">T16</div>
+        </div>
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T17</div>
+        </div>
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T18</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T19</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T20</div>
+        </div>
+      </div>
+      <div class="parking-row">
+        <div class="parking-spot available">
+          <div class="parking-label available">T21</div>
+        </div>
+        <div class="parking-spot unavailable">
+          <div class="parking-label">T22</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T23</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T24</div>
+        </div>
+        <div class="parking-spot available">
+          <div class="parking-label available">T25</div>
+        </div>
+      </div>
+    </div>    
+</body>
+</html>
