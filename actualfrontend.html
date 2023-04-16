@@ -108,9 +108,9 @@
       </nav>
     </div>
     <div class="footer"></div>
-    <form name="park-data" action="{{url_for(search)}}" method="get">
+    <form name="query" action="{{url_for('search')}}" method="get">
     <div class="search-box">
-      <input type="text" placeholder="Search..." id="search" list="search-list">
+      <input type="text" placeholder="Search..." id="search" name="query" list="search-list">
       <datalist id="search-list">
         <option value="Templin Hall"></option>
         <option value="Ellsworth Hall"></option>
