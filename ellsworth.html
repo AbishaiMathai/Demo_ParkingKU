@@ -118,7 +118,7 @@
                 <div class="info"  style="display: block; text-align: center;">
                     <h1 type="heading">Ellsworth Parking </h1>
                     <h2>
-                        Number of open parkings: {(query)}
+                        Number of open parkings: {{query}}
                     </h2>
                     <button type="goto-parking" onclick="location.href='https://www.google.com/maps/place/Daisy+Hill+Parking/@38.9532999,-95.2598348,883m/data=!3m1!1e3!4m6!3m5!1s0x87bf68d2cf02fbaf:0xdf774c0a3955a97e!8m2!3d38.9523287!4d-95.2597599!16s%2Fg%2F11c6ljvmk5'">
                         Navigate
@@ -134,10 +134,14 @@
             </div>
            
             <div style="display: flex;">
-                
-                <button type="button" class="box" onclick="location.href='#'">Templin</button>
-                <button type="button" class="box" onclick="location.href='#'">Lied Center</button>
-                
+                <form name="query" action="{{url_for('search')}}" method="GET">
+                <input type="hidden" value="Templin Hall">
+                <button type="button" class="box" onclick="location.href='templin.html'">Templin</button>
+                </form>
+                <form name="query" action="{{url_for('search')}}" method="GET">
+                <input type="hidden" value="Lied Center">
+                <button type="button" class="box" onclick="location.href='Lied.html'">Lied Center</button>
+                </form>
             </div>
         </div>
     </body>
