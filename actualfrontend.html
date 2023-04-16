@@ -1,10 +1,12 @@
 <html>
   <head>
     <title>KU Parking System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&display=swap">
     <style>
       body {
         margin: 0;
         padding: 0;
+        font-family: "Poppins", sans-serif;
       }
       .header {
         display: flex;
@@ -12,16 +14,16 @@
         justify-content: space-between;
         background-color: blue;
         height: 100px;
-        padding: 0 20px;
+        padding: 10px;
       }
       .logo {
+        padding-left: 5px;
         height: 75px;
         width: auto;
       }
       .nav {
         display: flex;
         align-items: center;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
       .nav-item {
         margin-left: 20px;
@@ -31,35 +33,34 @@
       .footer {
         background-color: red;
         height: 10px;
-    }
-    .search-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
-      border: 1px solid black;
-      padding: 5px;
-      margin-top: 20px;
-      width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .search-box input[type="text"] {
-      flex: 1;
-      border: none;
-      outline: none;
-      font-size: 16px;
-      padding: 5px;
-    }
-    .search-box button[type="submit"] {
+      }
+      .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        border: 1px solid black;
+        padding: 5px;
+        margin-top: 20px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .search-box input[type="text"] {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 5px;
+      }
+      .search-box button[type="submit"] {
         border: none;
         background-color: #fff;
         outline: none;
         cursor: pointer;
         padding: 3px;
-        
       }
-      .search-box button [type="search-img"]{
+      .search-box button[type="submit"] img {
         height: 17px;
         width: auto;
       }
@@ -67,72 +68,55 @@
         font-size: 16px;
         color: black;
       }
-    body h1 {
-
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .parking-spots {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .content{
-      padding-left: 20px;
-    }
-    .parking-spot {
-      padding: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-      width: 200px;
-    }
-    .parking-spot button [type='Ellsworth']{
-      padding: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-      width: 200px;
-    }
-    .parking-spot button [type='Templin']{
-      padding: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-      width: 200px;
-    }
-    .parking-spot button [type='Lied']{
-      padding: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-      width: 200px;
-    }
-    .parking-spot h2 {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    .parking-spot p {
-      font-size: 16px;
-    }
+      body h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .parking-spots {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .content{
+        padding-left: 20px;
+      }
+      .parking-spot {
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        width: fit-content;
+      }
+      .parking-spot button {
+        padding: 10px;
+        margin:5px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        width: 200px;
+      }
+      .parking-spot h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .parking-spot p {
+        font-size: 16px;
+      }
     </style>
   </head>
   <body>
+
     <div class="header">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class="logo" onclick="location.href='actualfrontend.html'">
-        <p style="font-size: 25px; color:aliceblue;">KU Parking System</p>
+        <h1 style="font-size: 30px; color:rgb(255, 255, 255);">KU Parking System</h1>
       <nav class="nav">
         <a href="https://lawrencetransit.org" target = "_blank" class="nav-item">Take a bus</a>
         <a href="about.html" class="nav-item">About</a>
         <a href="http://www2.ku.edu/contact.shtml" target = "_blank" class="nav-item">Contact</a>
       </nav>
     </div>
+
     <div class="footer"></div>
+
     <form name="query" action="{{url_for('search')}}" method="get">
     <div class="search-box">
       <input type="text" placeholder="Search..." id="search" name="query" list="search-list">
@@ -146,29 +130,48 @@
       </button>
     </form>
     </div>
+
     <div class="content">
-        <h1>Nearby Parking Spots</h1>
+        <h1 style="padding-left: 10px;"> Nearby Parking Spots</h1>
+
         <div class="parking-spots">
+
           <div class="parking-spot">
-            <button type="Templin" onclick="location.href='#'">
             <h2>Templin Hall</h2>
             <p>5 mins away</p>
-          </button>
+            <form name="query" action="{{url_for('search')}}" method="GET">
+              <input type="hidden" value="Templin Hall">
+              <button type="Templin"><i class="fa fa-search"></i>
+                Directions
+              </button>
+          </form>
           </div>
+
           <div class="parking-spot">
-            <button type="Ellsworth" onclick="location.href='ellsworth.html'">
-        
             <h2>Ellsworth Hall</h2>
             <p>7 mins away</p>
-          </button>
+            <form name="query" action="{{url_for('search')}}" method="GET">
+              <input type="hidden" value="Ellsworth Hall">
+              <button type="Ellsworth"><i class="fa fa-search"></i>
+                Directions
+              </button>
+          </form>
           </div>
+
           <div class="parking-spot">
-            <button type="Lied" onclick="location.href='#'">
             <h2>Lied Center</h2>
             <p>10 mins away</p>
-          </button>
+            <form name="query" action="{{url_for('search')}}" method="GET">
+              <input type="hidden" value="Lied Center">
+              <button type="Lied Center"><i class="fa fa-search"></i>
+                Directions
+              </button>
+          </form>
           </div>
+        
         </div>
+
       </div>
+
   </body>
 </html>

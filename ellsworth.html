@@ -135,12 +135,16 @@
            
             <div style="display: flex;">
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                <input type="hidden" value="Templin Hall">
-                <button type="button" class="box" onclick="location.href='templin.html'">Templin</button>
+                    <input type="hidden" value="Templin Hall">
+                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                        Templin
+                    </button>
                 </form>
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                <input type="hidden" value="Lied Center">
-                <button type="button" class="box" onclick="location.href='Lied.html'">Lied Center</button>
+                    <input type="hidden" value="Lied Center">
+                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                        Lied Center
+                    </button>
                 </form>
             </div>
         </div>
