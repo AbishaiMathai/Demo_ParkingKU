@@ -1,12 +1,14 @@
 <html>
     <head>
         <title>
-            Ellsworth Parking
+            Lied Center Parking
         </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&display=swap">
         <style>
             body {
                 margin: 0;
                 padding: 0;
+                font-family: 'Poppins',sans-serif;
             }
             .header {
                 display: flex;
@@ -14,16 +16,16 @@
                 justify-content: space-between;
                 background-color: blue;
                 height: 100px;
-                padding: 0 20px;
+                padding: 10px;
             }     
             .logo {
+                padding: 5px;
                 height: 75px;
                 width: auto;
             }
             .nav {
                 display: flex;
                 align-items: center;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
             .nav-item {
                 margin-left: 20px;
@@ -102,7 +104,7 @@
     <body>
         <div class="header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class ="logo" onclick="location.href='actualfrontend.html'">
-            <p style="font-size: 25px; color:aliceblue;">KU Parking System</p>
+            <h1 style="font-size: 30px; color:aliceblue;">KU Parking System</h1>
             <nav class="nav">
                 <a href="https://lawrencetransit.org" target = "_blank" class="nav-item">Take a bus</a>
                 <a href="about.html" class="nav-item">About</a>
@@ -135,14 +137,14 @@
            
             <div style="display: flex;">
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                    <input type="hidden" value="Templin Hall">
-                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                    <input type="hidden" name="query" value="Templin Hall">
+                    <button type="submit" class="box">
                         Templin
                     </button>
                 </form>
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                    <input type="hidden" value="Ellsworth Hall">
-                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                    <input type="hidden"  name="query" value="Ellsworth Hall">
+                    <button type="submit"  class="box">
                         Ellsworth
                     </button>
                 </form>
