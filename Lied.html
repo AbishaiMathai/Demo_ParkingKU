@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>
+            Ellsworth Parking
+        </title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: blue;
+                height: 100px;
+                padding: 0 20px;
+            }     
+            .logo {
+                height: 75px;
+                width: auto;
+            }
+            .nav {
+                display: flex;
+                align-items: center;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .nav-item {
+                margin-left: 20px;
+                color: #fff;
+                font-size: 16px;
+            }
+            .footer {
+                background-color: red;
+                height: 10px;
+            }
+            .info {
+                padding: 10px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-align: center;
+            }
+            .content{
+                padding: 50px;
+                padding-top: 5px;
+            }
+            
+            .parking-img{
+                height: 10px;
+                width: auto;
+                float: right;
+                size-adjust: relative;
+            }
+            button[type="goto-parking"] {
+                background-color: blue;
+                color: white;
+                border-radius: 10px;
+                padding: 10px 20px;
+                border-color:blue;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+            .container {
+                background-color: #f1f1f1;
+                padding: 20px;
+                border-radius: 10px;
+                
+                flex-wrap: wrap;
+                justify-content:left;
+                align-items: center;
+                width:fit-content;
+                margin: 0 auto;
+            }
+            
+            .box {
+                background-color: #ffffff;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px #ccc;
+                margin: 10px;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 20px;
+            }
+            
+            .box a {
+                text-decoration: none;
+                color: #333;
+            }
+            
+            .box:hover {
+                transform: scale(1.05);
+                transition: all 0.3s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class ="logo" onclick="location.href='actualfrontend.html'">
+            <p style="font-size: 25px; color:aliceblue;">KU Parking System</p>
+            <nav class="nav">
+                <a href="https://lawrencetransit.org" target = "_blank" class="nav-item">Take a bus</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="http://www2.ku.edu/contact.shtml" target = "_blank" class="nav-item">Contact</a>
+            </nav>      
+        </div>
+        <div class="footer"></div>
+        <div class="content">    
+            <div>
+                <div class='parking-img'>
+                    <img src = "Lied-Center.png" height="700px" width='auto'  onclick="location.href='https://www.google.com/maps/place/Lot+300,+Lawrence,+KS+66045/@38.9545009,-95.2630351,400m/data=!3m1!1e3!4m6!3m5!1s0x87bf6f2b664a8fff:0x39dffc5ed3513a5!8m2!3d38.9539503!4d-95.2634362!16s%2Fg%2F12vtgl_bb'">
+                </div>
+                <div class="info"  style="display: block; text-align: center;">
+                    <h1 type="heading">Lied Center Parking </h1>
+                    <h2>
+                        Number of open parkings: {{query}}
+                    </h2>
+                    <button type="goto-parking" onclick="location.href='https://www.google.com/maps/place/Lot+300,+Lawrence,+KS+66045/@38.9545009,-95.2630351,400m/data=!3m1!1e3!4m6!3m5!1s0x87bf6f2b664a8fff:0x39dffc5ed3513a5!8m2!3d38.9539503!4d-95.2634362!16s%2Fg%2F12vtgl_bb'">
+                        Navigate
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="container">
+            <div>
+                <h2>Other Parking Spots:</h2>
+            </div>
+           
+            <div style="display: flex;">
+                <form name="query" action="{{url_for('search')}}" method="GET">
+                    <input type="hidden" value="Templin Hall">
+                    <button type="button" class="box" onclick="location.href='templin.html'">Templin</button>
+                </form>
+                <form name="query" action="{{url_for('search')}}" method="GET">
+                    <input type="hidden" value="Ellsworth Hall">
+                <button type="button" class="box" onclick="location.href='ellsworth.html'">Ellsworth</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
