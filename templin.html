@@ -1,12 +1,14 @@
 <html>
     <head>
         <title>
-            Ellsworth Parking
+            Templin Hall Parking
         </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&display=swap">
         <style>
             body {
                 margin: 0;
                 padding: 0;
+                font-family: 'Poppins',sans-serif;
             }
             .header {
                 display: flex;
@@ -14,16 +16,16 @@
                 justify-content: space-between;
                 background-color: blue;
                 height: 100px;
-                padding: 0 20px;
+                padding: 10px;
             }     
             .logo {
+                padding: 5px;
                 height: 75px;
                 width: auto;
             }
             .nav {
                 display: flex;
                 align-items: center;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
             .nav-item {
                 margin-left: 20px;
@@ -103,7 +105,7 @@
     <body>
         <div class="header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png" alt="Logo" class ="logo" onclick="location.href='actualfrontend.html'">
-            <p style="font-size: 25px; color:aliceblue;">KU Parking System</p>
+            <h1 style="font-size: 30px; color:aliceblue;">KU Parking System</h1>
             <nav class="nav">
                 <a href="https://lawrencetransit.org" target = "_blank" class="nav-item">Take a bus</a>
                 <a href="about.html" class="nav-item">About</a>
@@ -117,7 +119,7 @@
                     <img src = "Templin Parking.png" height="500px" width='auto'  onclick="location.href='https://www.google.com/maps/place/Lot+101,+Lawrence,+KS+66045/@38.956487,-95.2595776,17.97z/data=!4m6!3m5!1s0x87bf6f2d89ec613b:0xd1377fb57667a1b9!8m2!3d38.9565186!4d-95.2580667!16s%2Fg%2F12vr8t33v'">
                 </div>
                 <div class="info"  style="display: block; text-align: center;">
-                    <h1 type="heading">Templin Parking </h1>
+                    <h1 type="heading">Templin Hall Parking </h1>
                     <h2>
                         Number of open parkings: {{query}}
                     </h2>
@@ -136,14 +138,14 @@
            
             <div style="display: flex;">
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                    <input type="hidden" value="Ellsworth Hall">
-                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                    <input type="hidden" name="query" value="Ellsworth Hall">
+                    <button type="submit" class="box">
                         Ellsworth
                     </button>
                 </form>
                 <form name="query" action="{{url_for('search')}}" method="GET">
-                    <input type="hidden" value="Lied Center">
-                    <button type="submit" class="box"><i class="fa fa-search"></i>
+                    <input type="hidden" name="query" value="Lied Center">
+                    <button type="submit" class="box">
                         Lied Center
                     </button>
                 </form>  
