@@ -77,7 +77,9 @@
       display: flex;
       flex-wrap: wrap;
     }
-
+    .content{
+      padding-left: 20px;
+    }
     .parking-spot {
       padding: 10px;
       margin-right: 10px;
@@ -86,7 +88,30 @@
       border-radius: 5px;
       width: 200px;
     }
-
+    .parking-spot button [type='Ellsworth']{
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      width: 200px;
+    }
+    .parking-spot button [type='Templin']{
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      width: 200px;
+    }
+    .parking-spot button [type='Lied']{
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      width: 200px;
+    }
     .parking-spot h2 {
       font-size: 20px;
       margin-bottom: 5px;
@@ -121,20 +146,29 @@
       </button>
     </form>
     </div>
-      <h1>Nearby Parking Spots</h1>
-      <div class="parking-spots">
-        <div class="parking-spot">
-          <h2>Templin Hall</h2>
-          <p>5 mins away</p>
+    <div class="content">
+        <h1>Nearby Parking Spots</h1>
+        <div class="parking-spots">
+          <div class="parking-spot">
+            <button type="Templin" onclick="location.href='#'">
+            <h2>Templin Hall</h2>
+            <p>5 mins away</p>
+          </button>
+          </div>
+          <div class="parking-spot">
+            <button type="Ellsworth" onclick="location.href='ellsworth.html'">
+        
+            <h2>Ellsworth Hall</h2>
+            <p>7 mins away</p>
+          </button>
+          </div>
+          <div class="parking-spot">
+            <button type="Lied" onclick="location.href='#'">
+            <h2>Lied Center</h2>
+            <p>10 mins away</p>
+          </button>
+          </div>
         </div>
-        <div class="parking-spot">
-          <h2>Ellsworth Hall</h2>
-          <p>7 mins away</p>
-        </div>
-        <div class="parking-spot">
-          <h2>Lied Center</h2>
-          <p>10 mins away</p>
       </div>
-    </div>
   </body>
 </html>
